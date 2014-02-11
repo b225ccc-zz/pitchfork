@@ -5,7 +5,9 @@ config = {}
 config['pitchfork'] = {
     # set this to True if you want events logged
     # to a tracking database.  see below for schema
-    'track': True
+    'track':     True,
+    # TODO: log level config not implemented yet
+    'log_level': 'info'
 }
 
 
