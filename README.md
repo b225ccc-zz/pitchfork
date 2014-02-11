@@ -4,6 +4,7 @@ pitchfork
 A framework for integrating Openstack with the rest of your systems
 
 
+=========
 ### quick start
 * clone
 * update pitchfork_config.py config['openstack_rabbitmq']
