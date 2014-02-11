@@ -2,6 +2,35 @@
 
 config = {}
 
+config['pitchfork'] = {
+    # set this to True if you want events logged
+    # to a tracking database.  see below for schema
+    'track': True
+}
+
+
+#
+# openstacktrack mysql db schema
+#
+#  CREATE TABLE track (
+#       track_id int(11) NOT NULL auto_increment,
+#       context_request_id varchar(42),
+#       context_user_name varchar(128),
+#       context_remote_address varchar(15),
+#       event_type varchar(128),
+#       publisher_id varchar(128),
+#       timestamp varchar(28),
+#       PRIMARY KEY (track_id)
+#     ) ENGINE=innodb AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+#
+#  CREATE TABLE message (
+#       message_id int(11) NOT NULL auto_increment,
+#       track_id int(11) NOT NULL,
+#       message varchar(16384),
+#       PRIMARY KEY (message_id)
+#     ) ENGINE=innodb AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+
 # rabbitmq connection variables
 config['openstack_rabbitmq'] = {
     'host':             'rabbitmq-host',
@@ -20,9 +49,6 @@ config['db_track'] = {
     'db':   'openstacktrack'
 }
 
-config['pitchfork'] = {
-    'track': True
-}
 
 # we want to take some action on these event types
 # TODO: add (and comment out) all known event types
